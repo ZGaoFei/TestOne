@@ -22,6 +22,14 @@ export default class HomeScreen extends Component<Props> {
                             navigation.navigate('Page2')
                         }} />
                 </View>
+
+                <View style={{ marginTop: 10 }}>
+                    <Button
+                        title="跳转到其他例子页面"
+                        onPress={() => {
+                            navigation.navigate('Page3')
+                        }} />
+                </View>
             </View>
         );
     }

@@ -52,4 +52,4 @@ const styles = StyleSheet.create({
     }
 })
 
-AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);
+// AppRegistry.registerComponent('AwesomeProject', () => ButtonBasics);

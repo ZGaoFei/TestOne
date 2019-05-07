@@ -8,23 +8,9 @@
 
 import React, { Component } from 'react';
 import { Button, StyleSheet, ScrollView, View } from 'react-native';
-import { createAppContainer, createStackNavigator } from 'react-navigation';
-import AlignItemsBasics from './test/test_view/AlignItemsBasics';
-import Blink from './test/test_view/Blink';
-import ButtonBasics from './test/test_view/ButtonBasics';
-import FetchExample from './test/test_view/FetchExample';
-import FixedDimensionsBasics from './test/test_view/FixedDimensionsBasics';
-import FlatListBasics from './test/test_view/FlatListBasics';
-import FlexDirectionBasics from './test/test_view/FlexDirectionBasics';
-import Greeting from './test/test_view/Greeting';
-import ImageTest from './test/test_view/ImageTest';
-import JustifyContentBasics from './test/test_view/JustifyContentBasics';
-import LotsOfStyle from './test/test_view/LotsOfStyle';
-import PizzaTranslator from './test/test_view/PizzaTranslator';
-import SampleAppMovies from './test/test_view/SampleAppMovies';
-import ScrollViewTest from './test/test_view/ScrollViewTest';
-import SectionListBasics from './test/test_view/SectionListBasics';
-import Touchables from './test/test_view/Touchables';
+import { createAppContainer, createStackNavigator, createNavigator } from 'react-navigation';
+import FadeInView from './FadeInView';
+
 
 
 type Props = {};
@@ -50,6 +36,8 @@ export class App extends Component<Props> {
         <Button color='red' title='ScrollViewTest' onPress={() => { navigation.navigate('ScrollViewTest') }} />
         <Button color='blue' title='SectionListBasics' onPress={() => { navigation.navigate('SectionListBasics') }} />
         <Button color='red' title='Touchables' onPress={() => { navigation.navigate('Touchables') }} />
+        <Button color='blue' title='ImageLoad' onPress={() => { navigation.navigate('ImageLoad') }} />
+        <Button color='red' title='FadeInView' onPress={() => { navigation.navigate('FadeInView') }} />
       </ScrollView>
     );
   }
@@ -69,58 +57,17 @@ const styles = StyleSheet.create({
   }
 });
 
-export const AppPage = createStackNavigator({
-  App: {
-    screen: App
+export const AppStackNavigator = createStackNavigator(
+  {
+    Page3: {
+      screen: App
   },
-  AlignItemsBasics: {
-    screen: AlignItemsBasics
-  },
-  Blink: {
-    screen: Blink
-  },
-  ButtonBasics: {
-    screen: ButtonBasics
-  },
-  FetchExample: {
-    screen: FetchExample
-  },
-  FixedDimensionsBasics: {
-    screen: FixedDimensionsBasics
-  },
-  FlatListBasics: {
-    screen: FlatListBasics
-  },
-  FlexDirectionBasics: {
-    screen: FlexDirectionBasics
-  },
-  Greeting: {
-    screen: Greeting
-  },
-  ImageTest: {
-    screen: ImageTest
-  },
-  JustifyContentBasics: {
-    screen: JustifyContentBasics
-  },
-  LotsOfStyle: {
-    screen: LotsOfStyle
-  },
-  PizzaTranslator: {
-    screen: PizzaTranslator
-  },
-  SampleAppMovies: {
-    screen: SampleAppMovies
-  },
-  ScrollViewTest: {
-    screen: ScrollViewTest
-  },
-  SectionListBasics: {
-    screen: SectionListBasics
-  },
-  Touchables: {
-    screen: Touchables
-  },
-});
+    FadeInView: {
+      screen: FadeInView
+    }
+  }, {
+    headerMode:'none'
+  }
+)
 
-export default HomeScreen = createAppContainer(AppPage);
+export default createAppContainer(AppStackNavigator);
